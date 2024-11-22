@@ -13,9 +13,9 @@
       <img src="logoweb-dammekynang.png" alt="Logo Damme Kỹ Năng">
     </div>
     <div class="social-links">
-      <a href="https://www.facebook.com/cuongcowk/"><img src="fb-icon.png" alt="Facebook"></a>
-      <a href="http://zalo.me/84799444052"><img src="zalo-icon.png" alt="Zalo"></a>
-      <a href="https://www.instagram.com/cuong_cow/"><img src="ig-icon.png" alt="Instagram"></a>
+      <a href="#"><img src="fb-icon.png" alt="Facebook"></a>
+      <a href="#"><img src="zalo-icon.png" alt="Zalo"></a>
+      <a href="#"><img src="ig-icon.png" alt="Instagram"></a>
     </div>
   </header>
   <main>
@@ -43,7 +43,7 @@
 
   <script>
     // Countdown Timer
-    const countdownDate = new Date().getTime() + 2 * 24 * 60 * 60 * 1000; // 2 ngày từ hiện tại
+    const countdownDate = new Date("2024-12-01T00:00:00").getTime(); // Thay đổi ngày giờ tại đây
     const timer = document.getElementById("countdown-timer");
 
     setInterval(() => {
@@ -55,9 +55,9 @@
       const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
       const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-      timer.textContent = `${days} ngày ${hours} giờ ${minutes} phút ${seconds} giây`;
-
-      if (distance < 0) {
+      if (distance > 0) {
+        timer.textContent = `${days} ngày ${hours} giờ ${minutes} phút ${seconds} giây`;
+      } else {
         clearInterval();
         timer.textContent = "Đã hoàn thành!";
       }
