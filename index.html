@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đam Mê Kỹ Năng - Đang xây dựng</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="logoweb-dammekynang.png" alt="Logo Damme Kỹ Năng">
+    </div>
+    <div class="social-links">
+      <a href="#"><img src="fb-icon.png" alt="Facebook"></a>
+      <a href="#"><img src="zalo-icon.png" alt="Zalo"></a>
+      <a href="#"><img src="ig-icon.png" alt="Instagram"></a>
+    </div>
+  </header>
+  <main>
+    <div class="hero">
+      <img src="construction-vector.png" alt="Trang đang xây dựng">
+      <h1>Trang web đang được xây dựng!</h1>
+      <p>Chúng tôi đang làm việc để hoàn thiện trang web.</p>
+      <div class="countdown">
+        <p>Còn lại: <span id="countdown-timer"></span></p>
+      </div>
+    </div>
+    <div class="contact">
+      <h2>Thông tin liên hệ</h2>
+      <ul>
+        <li><strong>Tên miền:</strong> <a href="http://dammekynang.id.vn">dammekynang.id.vn</a></li>
+        <li><strong>Số điện thoại:</strong> 0369225402</li>
+        <li><strong>Email:</strong> <a href="mailto:daonhutcuong@gmail.com">daonhutcuong@gmail.com</a></li>
+        <li><strong>Địa chỉ:</strong> TX Điện Bàn - tỉnh Quảng Nam</li>
+      </ul>
+    </div>
+  </main>
+  <footer>
+    <p>© 2024 Đam Mê Kỹ Năng.</p>
+  </footer>
+
+  <script>
+    // Countdown Timer
+    const countdownDate = new Date().getTime() + 2 * 24 * 60 * 60 * 1000; // 2 ngày từ hiện tại
+    const timer = document.getElementById("countdown-timer");
+
+    setInterval(() => {
+      const now = new Date().getTime();
+      const distance = countdownDate - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      timer.textContent = `${days} ngày ${hours} giờ ${minutes} phút ${seconds} giây`;
+
+      if (distance < 0) {
+        clearInterval();
+        timer.textContent = "Đã hoàn thành!";
+      }
+    }, 1000);
+  </script>
+</body>
+</html>
